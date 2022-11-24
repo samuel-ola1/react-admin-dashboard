@@ -27,8 +27,31 @@ const Topbar = () => {
             borderRadius="3px"
         >
             <InputBase sx={ {ml: 2, flex: 1}} placeholder="Search" />
+            <IconButton>
+                <SearchIcon />
+            </IconButton>
         </Box>
-        <IconButton></IconButton>
+        
+        {/* Icons */}
+        <Box display="flex">
+            <IconButton onClick={colorMode.toggleColorMode}>
+                {theme.palette.mode === "dark" ? (
+                    <DarkModeOutlinedIcon />
+                ): (
+                    <LightModeOutlinedIcon />
+                )   
+                }
+            </IconButton>
+            <IconButton>
+                <NotificationOutlinedIcon />
+            </IconButton>
+            <IconButton>
+                <SettingsOutlinedIcon />
+            </IconButton>
+            <IconButton>
+                <PersonOutlinedIcon />
+            </IconButton>
+        </Box>
        </Box>
     );
 }
