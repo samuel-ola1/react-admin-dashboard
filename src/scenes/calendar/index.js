@@ -64,7 +64,7 @@ const Calendar = () => {
                         {currentEvents.map((event) => (
                             <ListItem
                                 key={event.id}
-                                sx={{ 
+                                sx={{
                                         backgroundColor: colors.greenAccent[500], 
                                         margin: "10px 0", 
                                         borderRadius: "2px"
@@ -76,8 +76,8 @@ const Calendar = () => {
                                         <Typography>
                                             {formatDate(event.start, {
                                                 year: "numeric",
-                                                month: "short",
-                                                day: "numeric"
+                                                month: "long",
+                                                day: "2-digit"
                                             })}
                                         </Typography>
                                     }
@@ -90,11 +90,11 @@ const Calendar = () => {
 
                 {/* Full Calendar */}
                 <Box
-                    flex="1 1 100%"
+                    flex="1 1 90%"
                     ml="15px"
                 >
                     <FullCalendar 
-                        height="75vh"
+                        height="70vh"
                         plugins={[
                             dayGridPlugin,
                             timeGridPlugin,
