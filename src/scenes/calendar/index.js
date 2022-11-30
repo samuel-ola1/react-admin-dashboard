@@ -110,9 +110,9 @@ const Calendar = () => {
                         editable={true}
                         selectable={true}
                         selectMirror={true}
-                        dayMaxEvent={true}
+                        dayMaxEvents={true}
                         select={handleDateClick}
-                        eventClick={handleEventClick}
+                        eventClick={(selected) => (handleEventClick(selected))}
                         eventsSet={(events) => setCurrentEvents(events)}
                         initialEvents={[
                             {id: "1234", title: "All-day event", date: "2022-09-14"},
