@@ -24,7 +24,7 @@ const Calendar = () => {
 
     const handleDateClick = (selected) => {
         console.log(selected)
-        const title = prompt("Please enter a new title fr your rent")
+        const title = prompt("Please enter a new title for your event")
         const calendarApi = selected.view.calendar;
         calendarApi.unselect();
 
@@ -41,7 +41,7 @@ const Calendar = () => {
     }
 
     const handleEventClick = (selected) => {
-        if(window.confirm(`Are you sure you want to delete the event`)) {
+        if(window.confirm(`Are you sure you want to delete this event`)) {
             selected.event.remove();
         }
     }
