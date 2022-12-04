@@ -12,11 +12,13 @@ import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Dashboard = () => {
-    const theme = useTheme()
-    const colors = tokens(theme.palette.mode)
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode);
 
+    const isNonMobile = useMediaQuery("(min-width:720px)");
 
     return (
         <Box m="20px">
@@ -24,7 +26,7 @@ const Dashboard = () => {
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Header title="DASHBOARD" subtitle="Welcome to your dashboard"/>
 
-                <Box>
+                <Box sx ={{flexBasis:isNonMobile ? undefined : "100%"}}>
                     <Button
                         sx={{ 
                                 backgroundColor: colors.blueAccent[700], 
@@ -48,8 +50,8 @@ const Dashboard = () => {
                 gap="20px"
             >
                 {/* ROW 1 */}
-                <Box 
-                    gridColumn="span 3"
+                <Box
+                    gridColumn={isNonMobile? "span 3" : "span 6"}
                     backgroundColor={colors.primary[400]}
                     display="flex"
                     alignItems="center"
@@ -69,7 +71,7 @@ const Dashboard = () => {
                 </Box>
                 
                 <Box 
-                    gridColumn="span 3"
+                    gridColumn={isNonMobile? "span 3" : "span 6"}
                     backgroundColor={colors.primary[400]}
                     display="flex"
                     alignItems="center"
@@ -89,7 +91,7 @@ const Dashboard = () => {
                 </Box>
 
                 <Box 
-                    gridColumn="span 3"
+                    gridColumn={isNonMobile? "span 3" : "span 6"}
                     backgroundColor={colors.primary[400]}
                     display="flex"
                     alignItems="center"
@@ -109,7 +111,7 @@ const Dashboard = () => {
                 </Box>
 
                 <Box 
-                    gridColumn="span 3"
+                    gridColumn={isNonMobile? "span 3" : "span 6"}
                     backgroundColor={colors.primary[400]}
                     display="flex"
                     alignItems="center"
@@ -131,7 +133,7 @@ const Dashboard = () => {
 
                 {/* ROW 2 */}
                 <Box
-                    gridColumn="span 8"
+                    gridColumn={isNonMobile? "span 8" : "span 12"}
                     gridRow="span 2"
                     backgroundColor={colors.primary[400]}
                 >
@@ -178,7 +180,7 @@ const Dashboard = () => {
 
                 {/* TRANSACTIONS */}
                 <Box 
-                    gridColumn="span 4" 
+                    gridColumn={isNonMobile? "span 4" : "span 12"}
                     gridRow="span 2" 
                     backgroundColor={colors.primary[400]} 
                     overflow="auto"
@@ -241,7 +243,7 @@ const Dashboard = () => {
 
                 {/* ROW 3 */}
                 <Box
-                    gridColumn="span 4"
+                    gridColumn={isNonMobile? "span 4" : "span 12"}
                     gridRow="span 2"
                     backgroundColor={colors.primary[400]}
                     p="30px"
@@ -277,7 +279,7 @@ const Dashboard = () => {
 
                 
                 <Box
-                    gridColumn="span 4"
+                    gridColumn={isNonMobile? "span 4" : "span 12"}
                     gridRow="span 2"
                     backgroundColor={colors.primary[400]}
                 >
@@ -297,7 +299,7 @@ const Dashboard = () => {
                 </Box>
 
                 <Box
-                    gridColumn="span 4"
+                    gridColumn={isNonMobile? "span 4" : "span 12"}
                     gridRow="span 2"
                     backgroundColor={colors.primary[400]}
                     p="30px"
